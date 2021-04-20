@@ -1,43 +1,16 @@
-<DOCTYPE !HTML>
-<head>
-    <title>Hello!</title>
-</head>
-<body>
-<?php
-         $d = date("D");
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>cookie session</title>
+   </head>
+   <body>
+      <?php
+         if( isset($_COOKIE["name"]))
+            echo "Welcome " . $_COOKIE["name"] . "<br />";
          
-         switch ($d){
-            case "Mon":
-               echo "Today is Monday";
-               break;
-            
-            case "Tue":
-               echo "Today is Tuesday";
-               break;
-            
-            case "Wed":
-               echo "Today is Wednesday";
-               break;
-            
-            case "Thu":
-               echo "Today is Thursday";
-               break;
-            
-            case "Fri":
-               echo "Today is Friday";
-               break;
-            
-            case "Sat":
-               echo "Today is Saturday";
-               break;
-            
-            case "Sun":
-               echo "Today is Sunday";
-               break;
-            
-            default:
-               echo "Wonder which day is this ?";
-         }
+         else
+            echo "Sorry... Not recognized" . "<br />";
       ?>
-      
-</body>
+   </body>
+</html>
